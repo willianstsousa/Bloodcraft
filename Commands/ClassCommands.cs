@@ -13,14 +13,14 @@ using User = ProjectM.Network.User;
 
 namespace Bloodcraft.Commands;
 
-[CommandGroup(name: "class")]
+[CommandGroup(name: "classe","cls")]
 internal static class ClassCommands
 {
     static EntityManager EntityManager => Core.EntityManager;
 
     static readonly bool _classes = ConfigService.ClassSystem;
 
-    [Command(name: "select", shortHand: "s", adminOnly: false, usage: ".class s [Class]", description: "Select class.")]
+    [Command(name: "seleciona", shortHand: "s", adminOnly: false, usage: ".class s [Class]", description: "Seleciona classe.")]
     public static void SelectClassCommand(ChatCommandContext ctx, string input)
     {
         if (!_classes)
@@ -55,7 +55,7 @@ internal static class ClassCommands
         }
     }
 
-    [Command(name: "choosespell", shortHand: "csp", adminOnly: false, usage: ".class csp [#]", description: "Sets shift spell for class if prestige level is high enough.")]
+    [Command(name: "escolhamagias", shortHand: "escolhemagias", adminOnly: false, usage: ".cls escolhemagias [#]", description: "Define uma magia de mudança para a classe se o nível de prestígio for alto o suficiente.")]
     public static void ChooseClassSpell(ChatCommandContext ctx, int choice)
     {
         if (!_classes)
@@ -185,7 +185,7 @@ internal static class ClassCommands
         }
     }
 
-    [Command(name: "change", shortHand: "c", adminOnly: false, usage: ".class c [Class]", description: "Change classes.")]
+    [Command(name: "troca", shortHand: "t", adminOnly: false, usage: ".cls t [Class]", description: "Troca de classe.")]
     public static void ChangeClassCommand(ChatCommandContext ctx, string input)
     {
         if (!_classes)
@@ -229,12 +229,12 @@ internal static class ClassCommands
         }
     }
 
-    [Command(name: "list", shortHand: "l", adminOnly: false, usage: ".class l", description: "List available classes.")]
+    [Command(name: "ver", shortHand: "v", adminOnly: false, usage: ".cls v", description: "Mostra classes disponíveis.")]
     public static void ListClasses(ChatCommandContext ctx)
     {
         if (!_classes)
         {
-            LocalizationService.HandleReply(ctx, "Classes are not enabled.");
+            LocalizationService.HandleReply(ctx, "Sistema de classes não está disponível.");
             return;
         }
 
@@ -247,7 +247,7 @@ internal static class ClassCommands
         LocalizationService.HandleReply(ctx, $"Classes: {classTypes}");
     }
 
-    [Command(name: "listspells", shortHand: "lsp", adminOnly: false, usage: ".class lsp [Class]", description: "Shows spells that can be gained from class.")]
+    [Command(name: "vermagias", shortHand: "vmagias", adminOnly: false, usage: ".cls vmagias [Class]", description: "Mostra magias que podem ser obtidas por classe.")]
     public static void ListClassSpellsCommand(ChatCommandContext ctx, string classType = "")
     {
         if (!_classes)
@@ -300,7 +300,7 @@ internal static class ClassCommands
         */
     }
 
-    [Command(name: "liststats", shortHand: "lst", adminOnly: false, usage: ".class lst [Class]", description: "List weapon and blood stat synergies for a class.")]
+    [Command(name: "verstatus", shortHand: "vstatus", adminOnly: false, usage: ".cls vstatus [Class]", description: "Listar sinergias de estatísticas de armas e sangue para uma classe.")]
     public static void ListClassStatsCommand(ChatCommandContext ctx, string classType = "")
     {
         if (!_classes)
@@ -352,7 +352,7 @@ internal static class ClassCommands
         */
     }
 
-    [Command(name: "lockshift", shortHand: "shift", adminOnly: false, usage: ".class shift", description: "Toggle shift spell.")]
+    [Command(name: "travashift", shortHand: "tshift", adminOnly: false, usage: ".cls tshift", description: "Habilita magia na telca shift.")]
     public static void ShiftSlotToggleCommand(ChatCommandContext ctx)
     {
         if (!_classes)
