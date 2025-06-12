@@ -62,17 +62,17 @@ internal static class Classes
 
     static readonly Dictionary<PlayerClass, string> _classColorMap = new()
     {
-        { PlayerClass.ShadowBlade, "#A020F0" },
-        { PlayerClass.DemonHunter, "#FFD700" },
-        { PlayerClass.BloodKnight, "#FF0000" },
-        { PlayerClass.ArcaneSorcerer, "#008080" },
-        { PlayerClass.VampireLord, "#00FFFF" },
-        { PlayerClass.DeathMage, "#00FF00" }
+        { PlayerClass.Lamina_das_Sombras, "#A020F0" },
+        { PlayerClass.Cacador_Demonio, "#FFD700" },
+        { PlayerClass.Cavalheiro_Sanguinario, "#FF0000" },
+        { PlayerClass.Feiticeiro_Arcano, "#008080" },
+        { PlayerClass.Lorde_Vampiro, "#00FFFF" },
+        { PlayerClass.Necromante, "#00FF00" }
     };
 
     public static readonly Dictionary<PlayerClass, List<PrefabGUID>> ClassShiftAbilities = new()
     {
-        [PlayerClass.BloodKnight] = 
+        [PlayerClass.Cavalheiro_Sanguinario] = 
         [
             new(0),
             new(0),
@@ -85,7 +85,7 @@ internal static class Classes
             new(0),
             new(0)
         ],
-        [PlayerClass.VampireLord] =
+        [PlayerClass.Lorde_Vampiro] =
         [
             new(0),
             new(0),
@@ -98,7 +98,7 @@ internal static class Classes
             new(0),
             new(0)
         ],
-        [PlayerClass.DemonHunter] =
+        [PlayerClass.Cacador_Demonio] =
         [
             new(0),
             new(0),
@@ -111,7 +111,7 @@ internal static class Classes
             new(0),
             new(0)
         ],
-        [PlayerClass.ShadowBlade] =
+        [PlayerClass.Lamina_das_Sombras] =
         [
             new(0),
             new(0),
@@ -124,7 +124,7 @@ internal static class Classes
             new(0),
             new(0)
         ],
-        [PlayerClass.ArcaneSorcerer] =
+        [PlayerClass.Feiticeiro_Arcano] =
         [
             new(0),
             new(0),
@@ -137,7 +137,7 @@ internal static class Classes
             new(0),
             new(0)
         ],
-        [PlayerClass.DeathMage] =
+        [PlayerClass.Necromante] =
         [
             new(0),
             new(0),
@@ -288,22 +288,22 @@ internal static class Classes
 
     public static readonly Dictionary<PlayerClass, (string, string)> ClassWeaponBloodMap = new()
     {
-        { PlayerClass.BloodKnight, (ConfigService.BloodKnightWeaponSynergies, ConfigService.BloodKnightBloodSynergies) },
-        { PlayerClass.DemonHunter, (ConfigService.DemonHunterWeaponSynergies, ConfigService.DemonHunterBloodSynergies) },
-        { PlayerClass.VampireLord, (ConfigService.VampireLordWeaponSynergies, ConfigService.VampireLordBloodSynergies) },
-        { PlayerClass.ShadowBlade, (ConfigService.ShadowBladeWeaponSynergies, ConfigService.ShadowBladeBloodSynergies) },
-        { PlayerClass.ArcaneSorcerer, (ConfigService.ArcaneSorcererWeaponSynergies, ConfigService.ArcaneSorcererBloodSynergies) },
-        { PlayerClass.DeathMage, (ConfigService.DeathMageWeaponSynergies, ConfigService.DeathMageBloodSynergies) }
+        { PlayerClass.Cavalheiro_Sanguinario, (ConfigService.BloodKnightWeaponSynergies, ConfigService.BloodKnightBloodSynergies) },
+        { PlayerClass.Cacador_Demonio, (ConfigService.DemonHunterWeaponSynergies, ConfigService.DemonHunterBloodSynergies) },
+        { PlayerClass.Lorde_Vampiro, (ConfigService.VampireLordWeaponSynergies, ConfigService.VampireLordBloodSynergies) },
+        { PlayerClass.Lamina_das_Sombras, (ConfigService.ShadowBladeWeaponSynergies, ConfigService.ShadowBladeBloodSynergies) },
+        { PlayerClass.Feiticeiro_Arcano, (ConfigService.ArcaneSorcererWeaponSynergies, ConfigService.ArcaneSorcererBloodSynergies) },
+        { PlayerClass.Necromante, (ConfigService.DeathMageWeaponSynergies, ConfigService.DeathMageBloodSynergies) }
     };
 
     public static readonly Dictionary<PlayerClass, (List<int>, List<int>)> ClassWeaponBloodEnumMap = new()
     {
-        { PlayerClass.BloodKnight, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.BloodKnightWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.BloodKnightBloodSynergies).Select(e => (int)e).ToList()) },
-        { PlayerClass.DemonHunter, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DemonHunterWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DemonHunterBloodSynergies).Select(e => (int)e).ToList()) },
-        { PlayerClass.VampireLord, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.VampireLordWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.VampireLordBloodSynergies).Select(e => (int)e).ToList()) },
-        { PlayerClass.ShadowBlade, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ShadowBladeWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ShadowBladeBloodSynergies).Select(e => (int)e).ToList()) },
-        { PlayerClass.ArcaneSorcerer, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ArcaneSorcererWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ArcaneSorcererBloodSynergies).Select(e => (int)e).ToList()) },
-        { PlayerClass.DeathMage, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DeathMageWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DeathMageBloodSynergies).Select(e => (int)e).ToList()) }
+        { PlayerClass.Cavalheiro_Sanguinario, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.BloodKnightWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.BloodKnightBloodSynergies).Select(e => (int)e).ToList()) },
+        { PlayerClass.Cacador_Demonio, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DemonHunterWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DemonHunterBloodSynergies).Select(e => (int)e).ToList()) },
+        { PlayerClass.Lorde_Vampiro, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.VampireLordWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.VampireLordBloodSynergies).Select(e => (int)e).ToList()) },
+        { PlayerClass.Lamina_das_Sombras, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ShadowBladeWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ShadowBladeBloodSynergies).Select(e => (int)e).ToList()) },
+        { PlayerClass.Feiticeiro_Arcano, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ArcaneSorcererWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ArcaneSorcererBloodSynergies).Select(e => (int)e).ToList()) },
+        { PlayerClass.Necromante, (Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DeathMageWeaponSynergies).Select(e => (int)e).ToList(), Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DeathMageBloodSynergies).Select(e => (int)e).ToList()) }
     };
 
     /*
@@ -320,12 +320,12 @@ internal static class Classes
 
     public static readonly Dictionary<PlayerClass, string> ClassSpellsMap = new()
     {
-        { PlayerClass.BloodKnight, ConfigService.BloodKnightSpells },
-        { PlayerClass.DemonHunter, ConfigService.DemonHunterSpells },
-        { PlayerClass.VampireLord, ConfigService.VampireLordSpells },
-        { PlayerClass.ShadowBlade, ConfigService.ShadowBladeSpells },
-        { PlayerClass.ArcaneSorcerer, ConfigService.ArcaneSorcererSpells },
-        { PlayerClass.DeathMage, ConfigService.DeathMageSpells }
+        { PlayerClass.Cavalheiro_Sanguinario, ConfigService.BloodKnightSpells },
+        { PlayerClass.Cacador_Demonio, ConfigService.DemonHunterSpells },
+        { PlayerClass.Lorde_Vampiro, ConfigService.VampireLordSpells },
+        { PlayerClass.Lamina_das_Sombras, ConfigService.ShadowBladeSpells },
+        { PlayerClass.Feiticeiro_Arcano, ConfigService.ArcaneSorcererSpells },
+        { PlayerClass.Necromante, ConfigService.DeathMageSpells }
     };
     public static List<PrefabGUID> GetClassBuffs(ulong steamId)
     {

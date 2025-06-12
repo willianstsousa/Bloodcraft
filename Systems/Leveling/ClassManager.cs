@@ -11,12 +11,12 @@ internal static class ClassManager
 {
     public enum PlayerClass
     {
-        BloodKnight,
-        DemonHunter,
-        VampireLord,
-        ShadowBlade,
-        ArcaneSorcerer,
-        DeathMage
+        Cavalheiro_Sanguinario,
+        Cacador_Demonio,
+        Lorde_Vampiro,
+        Lamina_das_Sombras,
+        Feiticeiro_Arcano,
+        Necromante
     }
     public enum ClassStatType : int
     {
@@ -123,12 +123,12 @@ internal static class ClassManager
         public static IReadOnlyDictionary<PlayerClass, OnHitEffects> ClassOnDamageEffects => _classOnDamageEffects;
         static readonly Dictionary<PlayerClass, OnHitEffects> _classOnDamageEffects = new()
         {
-            { PlayerClass.BloodKnight, new(Buffs.VampireLeechDebuff, Buffs.BloodCurseBuff, true) },
-            { PlayerClass.DemonHunter, new(Buffs.VampireStaticDebuff, Buffs.StormChargeBuff, false) },
-            { PlayerClass.VampireLord, new(Buffs.VampireChillDebuff, Buffs.FrostWeaponBuff, false) },
-            { PlayerClass.ShadowBlade, new(Buffs.VampireIgniteDebuff, Buffs.ChaosHeatedBuff, false) },
-            { PlayerClass.ArcaneSorcerer, new(Buffs.VampireWeakenDebuff, Buffs.IllusionShieldBuff, false) },
-            { PlayerClass.DeathMage, new(Buffs.VampireCondemnDebuff, Buffs.UnholyAmplifyBuff, true) },
+            { PlayerClass.Cavalheiro_Sanguinario, new(Buffs.VampireLeechDebuff, Buffs.BloodCurseBuff, true) },
+            { PlayerClass.Cacador_Demonio, new(Buffs.VampireStaticDebuff, Buffs.StormChargeBuff, false) },
+            { PlayerClass.Lorde_Vampiro, new(Buffs.VampireChillDebuff, Buffs.FrostWeaponBuff, false) },
+            { PlayerClass.Lamina_das_Sombras, new(Buffs.VampireIgniteDebuff, Buffs.ChaosHeatedBuff, false) },
+            { PlayerClass.Feiticeiro_Arcano, new(Buffs.VampireWeakenDebuff, Buffs.IllusionShieldBuff, false) },
+            { PlayerClass.Necromante, new(Buffs.VampireCondemnDebuff, Buffs.UnholyAmplifyBuff, true) },
         };
     }
     public static IReadOnlyDictionary<ClassStatType, UnitStatType> ClassStatTypes => _classStatTypes;
@@ -219,21 +219,21 @@ internal static class ClassManager
     public static IReadOnlyDictionary<PlayerClass, List<WeaponStatType>> ClassWeaponStatSynergies => _classWeaponStatSynergies;
     static readonly Dictionary<PlayerClass, List<WeaponStatType>> _classWeaponStatSynergies = new()
     {
-        { PlayerClass.BloodKnight, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.BloodKnightWeaponSynergies) },
-        { PlayerClass.DemonHunter, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DemonHunterWeaponSynergies) },
-        { PlayerClass.VampireLord, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.VampireLordWeaponSynergies) },
-        { PlayerClass.ShadowBlade, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ShadowBladeWeaponSynergies) },
-        { PlayerClass.ArcaneSorcerer, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ArcaneSorcererWeaponSynergies) },
-        { PlayerClass.DeathMage, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DeathMageWeaponSynergies) }
+        { PlayerClass.Cavalheiro_Sanguinario, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.BloodKnightWeaponSynergies) },
+        { PlayerClass.Cacador_Demonio, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DemonHunterWeaponSynergies) },
+        { PlayerClass.Lorde_Vampiro, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.VampireLordWeaponSynergies) },
+        { PlayerClass.Lamina_das_Sombras, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ShadowBladeWeaponSynergies) },
+        { PlayerClass.Feiticeiro_Arcano, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.ArcaneSorcererWeaponSynergies) },
+        { PlayerClass.Necromante, Configuration.ParseEnumsFromString<WeaponStatType>(ConfigService.DeathMageWeaponSynergies) }
     };
     public static IReadOnlyDictionary<PlayerClass, List<BloodStatType>> ClassBloodStatSynergies => _classBloodStatSynergies;
     static readonly Dictionary<PlayerClass, List<BloodStatType>> _classBloodStatSynergies = new()
     {
-        { PlayerClass.BloodKnight, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.BloodKnightBloodSynergies) },
-        { PlayerClass.DemonHunter, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DemonHunterBloodSynergies) },
-        { PlayerClass.VampireLord, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.VampireLordBloodSynergies) },
-        { PlayerClass.ShadowBlade, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ShadowBladeBloodSynergies) },
-        { PlayerClass.ArcaneSorcerer, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ArcaneSorcererBloodSynergies) },
-        { PlayerClass.DeathMage, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DeathMageBloodSynergies) }
+        { PlayerClass.Cavalheiro_Sanguinario, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.BloodKnightBloodSynergies) },
+        { PlayerClass.Cacador_Demonio, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DemonHunterBloodSynergies) },
+        { PlayerClass.Lorde_Vampiro, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.VampireLordBloodSynergies) },
+        { PlayerClass.Lamina_das_Sombras, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ShadowBladeBloodSynergies) },
+        { PlayerClass.Feiticeiro_Arcano, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.ArcaneSorcererBloodSynergies) },
+        { PlayerClass.Necromante, Configuration.ParseEnumsFromString<BloodStatType>(ConfigService.DeathMageBloodSynergies) }
     };
 }
